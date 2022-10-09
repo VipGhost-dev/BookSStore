@@ -4,77 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/teles">
 
-    <TextView
-        android:id="@+id/txtID"
-        android:layout_width="wrap_content"
+
+    <android.widget.Button
+        android:id="@+id/Refresh"
+        android:layout_width="136dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/gradient_btn"
+        android:onClick="GetTextFromSql"
+        android:text="Обновить"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_books" />
+
+    <android.widget.Button
+        android:id="@+id/add"
+        android:layout_width="136dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/gradient_btn"
+        android:onClick="gotoAddPage"
+        android:text="Добавить"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_books" />
+
+    <TableLayout
+        android:id="@+id/tb_books"
+        android:layout_width="410dp"
+        android:layout_height="426dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/NameTxt"
+        android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Название"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/AuthorTxt"
+        android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Автор"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtID" />
+        app:layout_constraintTop_toBottomOf="@+id/NameTxt" />
 
-    <TextView
-        android:id="@+id/txtAvtor"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/PublisherTxt"
+        android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Издатель"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        app:layout_constraintTop_toBottomOf="@+id/AuthorTxt" />
 
-    <TextView
-        android:id="@+id/txtAge"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/AgeTxt"
+        android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:ems="10"
+        android:inputType="number"
+        android:text=""
+        android:hint="Год"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAvtor" />
+        app:layout_constraintTop_toBottomOf="@+id/PublisherTxt" />
 
-    <TextView
-        android:id="@+id/txtPublisher"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/GenreTxt"
+        android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Жанр"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
-
-    <TextView
-        android:id="@+id/txtGenre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublisher" />
-
-    <Button
-        android:id="@+id/Enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="GetTextFromSql"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGenre" />
+        app:layout_constraintTop_toBottomOf="@+id/AgeTxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
